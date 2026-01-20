@@ -4,9 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        string letter = null;
+        string letter;
         Console.WriteLine("What is your grade percentage? ");
         int grade = Convert.ToInt32(Console.ReadLine());
+        // Or you can do this:
+        // string answer = Console.ReadLine();
+        // int grade = int.Parse(answer);
         if (grade >= 90)
             {
                 letter = "A";
