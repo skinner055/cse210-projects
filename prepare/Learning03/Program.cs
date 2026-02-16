@@ -20,7 +20,7 @@ class Program
         Console.WriteLine(f4.GetFractionString());
         Console.WriteLine(f4.GetDecimalValue());
 
-        Random random= new Random();
+        Random random = new Random();
         Fraction f5 = new Fraction();
         for (int i = 0; i < 20; i++)
         {
