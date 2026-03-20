@@ -13,8 +13,7 @@ public class GoalManager
         int nextLevel = 1000 - (_score % 1000);
         Console.WriteLine($"\nYou have {_score} points.");
         Console.WriteLine($"Your level: {level}");
-        Console.WriteLine($"Points to next level: {nextLevel}\n");
-        
+        Console.WriteLine($"Points to next level: {nextLevel}\n");   
     }
 
     private int GetPositiveInt(string prompt)
