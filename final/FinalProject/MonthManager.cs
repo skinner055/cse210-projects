@@ -1,4 +1,5 @@
-using System;
+using System.IO;
+using System.Linq;
 
 public class MonthManager
 {
@@ -6,24 +7,34 @@ public class MonthManager
 
     public MonthManager()
     {
-    }
+        var files = Directory.GetFiles("Archive", "month*.txt");
 
-    public int GetNextMonth()
-    {
-        return 0;
+        if (files.Length == 0)
+        {
+            _currentMonth = 1;
+        }
+        else
+        {
+            int max = files
+                .Select(f => int.Parse(Path.GetFileNameWithoutExtension(f).Replace("month", "")))
+                .Max();
+
+            _currentMonth = max + 1;
+        }
     }
 
     public int GetCurrentMonth()
     {
-        return 0;
+        return _currentMonth;
     }
 
     public void IncrementMonth()
     {
+        _currentMonth++;
     }
 
     public string GetMonthFileName()
     {
-        return "";
+        return $"month{_currentMonth}.txt";
     }
 }

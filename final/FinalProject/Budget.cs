@@ -1,29 +1,29 @@
-using System;
-
 public class Budget
 {
     private double _monthlyBudget;
 
     public Budget(double amount)
     {
+        _monthlyBudget = amount;
     }
 
     public void SetBudget(double amount)
     {
+        _monthlyBudget = amount;
     }
 
     public double GetBudget()
     {
-        return 0.0;
+        return _monthlyBudget;
     }
 
     public double CalculateRemaining(double totalSpent)
     {
-        return 0.0;
+        return _monthlyBudget - totalSpent;
     }
 
     public bool IsOverBudget(double totalSpent)
     {
-        return false;
+        return totalSpent > _monthlyBudget;
     }
 }

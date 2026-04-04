@@ -2,28 +2,18 @@ using System;
 
 public class RecurringExpense : Expense
 {
-    private string _frequency;
-
-    public RecurringExpense(string name, double amount, string frequency)
-        : base(name, amount)
-    {
-    }
-
-    public override void MarkComplete()
+    public RecurringExpense(string name, double amount) : base(name, amount)
     {
     }
 
     public override void ProcessEndOfMonth()
     {
+        _isCompleted = false;
     }
 
     public override string GetDetails()
     {
-        return "";
-    }
-
-    public override string Save()
-    {
-        return "";
+        string status = _isCompleted ? "[X]" : "[ ]";
+        return $"{status} [Recurring] {_name} - ${_amount}";
     }
 }
